@@ -45,7 +45,7 @@ app.get(`/sammy/leed`, (req, res) => {
 app.post(`/create`, (req, res) => {
   const data = req.body 
   console.log(data)
-  if(data.fn == "" || data.sn == "" || data.email == ""){
+  if(data.fn == "" || data.sn == "" || data.email == ""  /* or !data.fn || !data.sn etc*/){
     res.send({
       message: "All fields are required"
  })
