@@ -57,3 +57,21 @@ app.post(`/create`, (req, res) => {
 }
 
 })
+
+//ERROR REQUEST
+
+app.post(`/start`, (req, res) => {
+  const data = req.body 
+  console.log(data)
+  if(data.fn == "" || data.sn == "" || data.email == ""  /* or !data.fn || !data.sn etc*/){
+    res.status(400).send({
+      message: "All fields are required"
+ })
+  
+}else{
+  res.status(201).send({
+    message: `User information accepted, Welcome User ${data.sn}, ${data.fn}, ${data.email}`
+})
+}
+
+})
