@@ -22,7 +22,9 @@ app.get(`/alora`, (req, res) => {
 
 app.get(`/today`, (req, res) => {
   let today = new Date()
-  res.send(today)
+  res.send({
+       messages: `today is ${today}`
+        })
   
 })
 //JSON concept
